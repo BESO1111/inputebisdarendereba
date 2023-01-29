@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Inputi from './inputebi';
+import Validatess from './validations';
 
 function App() {
+//inputebis darenderebis gza
+let[name,setname]=useState()
+
+   let[userlist,setuserlist]=useState()
+
+function kliki(e){
+e.preventDefault()
+setuserlist(name)
+
+}
+function rame(e){
+setname(e.target.value)
+
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Validatess/>
+      <Inputi/>
+      besoo
+<form onSubmit={kliki}>
+<input type="text"  value={name} onChange={rame}/>
+<button>kliskjfbds</button>
+</form>
+{userlist}
+
+
+
     </div>
   );
 }
